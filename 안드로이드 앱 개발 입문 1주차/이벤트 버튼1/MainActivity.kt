@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    /*fun onButton1Clicked(v: View) {
+    fun onButton1Clicked(v: View) {
         Toast.makeText(this,"시작!", Toast.LENGTH_LONG).show()
-    }*/
+    }
