@@ -17,3 +17,4 @@ class MainActivity : AppCompatActivity() {
     fun onButton1Clicked(v: View) {
         Toast.makeText(this,"시작!", Toast.LENGTH_LONG).show()
     }
+}
