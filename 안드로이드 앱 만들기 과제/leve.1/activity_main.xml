@@ -6,53 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/Text_ID"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="아이디"
-        app:layout_constraintBottom_toTopOf="@+id/Text_Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="10dp"
+        android:text="아이디 입력"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textID"
+        app:layout_constraintStart_toStartOf="@+id/textID"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/Text_Password"
+        android:id="@+id/textID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="비밀번호"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        android:hint="@string/id"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="비밀번호 입력"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textPassword"
+        app:layout_constraintStart_toStartOf="@+id/textPassword"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/loginButton"
         android:layout_width="325dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginTop="400dp"
         android:layout_marginBottom="285dp"
-        android:onClick="onButton1Clicked"
-        android:text="로그인"
+        android:text="@string/Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/join_button"
+        android:id="@+id/joinButton"
         android:layout_width="325dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginTop="70dp"
-        android:onClick="onButton2Clicked"
-        android:text="회원가입"
+        android:text="@string/Join"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
