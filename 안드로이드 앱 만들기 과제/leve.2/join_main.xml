@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="회원가입"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="아이디"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextId"
+        app:layout_constraintStart_toStartOf="@+id/editTextId" />
+
+    <EditText
+        android:id="@+id/editTextId"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:ems="10"
+        android:hint="@string/Id"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <Button
+        android:id="@+id/btnIdCheck"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:padding="1dp"
+        android:text="중복확인"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextId"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editTextPass"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/editTextId"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:text="비밀번호"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPass"
+        app:layout_constraintStart_toStartOf="@+id/editTextPass" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 확인"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRePass"
+        app:layout_constraintStart_toStartOf="@+id/editTextRePass" />
+
+    <EditText
+        android:id="@+id/editTextRePass"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:ems="10"
+        android:hint="repassword"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPass"
+        app:layout_constraintStart_toStartOf="@+id/editTextPass"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="닉네임"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNick"
+        app:layout_constraintStart_toStartOf="@+id/editTextNick"/>
+
+    <EditText
+        android:id="@+id/editTextNick"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:ems="10"
+        android:hint="nickname"
+        android:inputType="text"
+        android:maxLength="20"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="471dp" />
+
+    <Button
+        android:id="@+id/btnCheckNick"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:padding="1dp"
+        android:text="중복확인"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNick"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="휴대폰"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="phonenumber"
+        android:inputType="number"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNick"
+        app:layout_constraintStart_toStartOf="@+id/editTextNick"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="600dp" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:padding="1dp"
+        android:text="완료"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
