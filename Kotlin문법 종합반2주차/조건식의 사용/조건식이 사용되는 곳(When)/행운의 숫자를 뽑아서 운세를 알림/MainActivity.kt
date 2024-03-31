@@ -1,9 +1,10 @@
 package com.example.practice
 
 fun main(){
+    //특정 번호 입력
     var todayNumber = readLine()!!.toInt()
 
-    when(todayNumber) {
+    when(todayNumber) { //특정 번호를 When으로 처리
         1 -> {
             println("재물이 들어올것입니다")
         }
