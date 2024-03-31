@@ -1,0 +1,19 @@
+package com.example.practice
+
+fun main(){
+    var infos = arrayOf("꿩", "닭", "참새", "오목눈이", "공작새")
+    //infos안에 5개의 값이 들어있다는 의미
+    //arrayOf:리스트 묶음
+
+    for(info in infos) {
+        //infos안에 있는 값을 하나씩 꺼내 info에 저장
+        if(info == "참새") {
+            //info가 if에서 찾으려는 값과 동일하면 true,
+            println("찾았다 참새!")
+            break//가장 가까운 반복문을 찾아 탈출
+        } else {
+            //찾으려는 값과 동일하지 않으면 false
+            continue//다시 처음으로 넘어가 다음 info 실행
+        }
+    }
+}
