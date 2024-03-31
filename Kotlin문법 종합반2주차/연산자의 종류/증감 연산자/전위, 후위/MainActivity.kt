@@ -13,9 +13,9 @@ fun main(){
     println(++num2) //20에 1 증가한 후 println 으로 출력
     println(num2) //println으로 num2에 변경된 값 출력
 
-    num3++ //다른 연산자와 같이 사용하지 단독으로 사용하면 num3에 저장된 값은 31으로 변경
+    num3++ //다른 연산자와 같이 사용하지않고 단독으로 사용하면 num3에 저장된 값은 31으로 변경
     println(num3) //println으로 num3에 변경된 값 출력
 
-    ++num3 //다른 연산자와 같이 사용하지 단독으로 사용하면 num3에 저장된 값은 32으로 변경
+    ++num3 //다른 연산자와 같이 사용하지않고 단독으로 사용하면 num3에 저장된 값은 32으로 변경
     println(num3) //println으로 num3에 변경된 값 출력
 }
