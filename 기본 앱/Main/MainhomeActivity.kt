@@ -15,7 +15,7 @@ class MainhomeActivity : AppCompatActivity() {
 
         if(intent.hasExtra("ID")){
             useId.text="아이디 : "+intent.getStringExtra("ID")
-        }
+        }//intetnt.hasExtra로 id키 값이 있는지 확인, 있으면 getStringExtra로 값을 받음
 
         val btCl=findViewById<ConstraintLayout>(R.id.btclose)
         btCl.setOnClickListener {
@@ -25,6 +25,7 @@ class MainhomeActivity : AppCompatActivity() {
         val imLg=findViewById<ImageView>(R.id.logoImage)
 
         val id=when((1 until 6).random()){
+            //1 ~ 6사이의 랜덤값    
             1 ->R.drawable.ca1
             2 ->R.drawable.ca2
             3 ->R.drawable.ca3
