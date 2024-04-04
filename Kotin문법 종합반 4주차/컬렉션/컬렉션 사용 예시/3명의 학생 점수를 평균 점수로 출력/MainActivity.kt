@@ -35,8 +35,9 @@ fun main() {
         println("평균점수는 ${average} 입니다")
     }
 }
-             //주 생성자
+
 class Student(name:String, kor:Int, math:Int, eng:Int) {
+    //(name:String, kor:Int, math:Int, eng:Int): 주 생성자
     var name:String
     var kor:Int
     var math:Int
