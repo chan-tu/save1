@@ -1,0 +1,38 @@
+package com.example.app
+
+fun main() {
+    var chicken = Chicken()
+    //Chicken()클래스 만들고 인스턴스화
+    var eggs = chicken.getEggs()
+    //Pair객체 2개은 eggs보유
+    var listEggs = eggs.toList()
+    //eggs를 toList()으로 하여 listEggs에 저장
+
+//    first, second로 관리
+//    var firstEgg = eggs.first
+//    var secondEgg = eggs.second
+
+    // 리스트로 관리
+    var firstEgg = listEggs[0]
+    //firstEgg에 '달걀' 저장
+    var secondEgg = listEggs[1]
+    //secondEgg '백반석 저장'
+
+    println("달걀의 종류는 ${eggs} 입니다.")
+    //eggs를 출력 했을 떄 (달걀, 맥반석)이 출력
+    println("리스트 달걀의 종류는 ${listEggs} 입니다.")
+    //listEggs를 출력 했을 떄 [달걀, 맥반석]이 출력
+    println("첫번째 달걀의 종류는 ${firstEgg} 입니다.")
+    //firstEgg에 '달걀'이 출력
+    println("두번째 달걀의 종류는 ${secondEgg} 입니다.")
+    //secondEgg '백반석'이 출력
+}
+class Chicken {
+    fun getEggs(): Pair<String, String> {
+        //리턴 타임은 Pair이고 첫번쨰 파라미터는 String, 두번쨰 파라미터도 String
+        var eggs = Pair("달걀", "맥반석")
+        //Pair라는 객체는 2개의 값을 가지고 있고 이를 eggs에 저장
+        return eggs
+        //eggs를 리턴
+    }
+}
