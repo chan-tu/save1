@@ -1,0 +1,42 @@
+package com.example.app
+
+fun main() {
+    println("몇 마리를 생성하시겠습니까?")
+    var count = readLine()!!.toInt()
+    var birds = mutableListOf<Bird>()
+
+    for(idx in 0..count-1) {
+        println("조류의 이름을 입력해주세요")
+        var name = readLine()!!
+
+        birds.add(Sparrow(name) as Bird)
+    }
+    println("============조류 생성완료============")
+    for(bird in birds) {
+        bird.fly()
+    }
+    // 다운캐스팅 오류
+    // Sparrow는 Bird가 가져야할 정보를 모두 가지고 있지 않기 때문임
+    //var s1:Sparrow = birds.get(0)
+    //birds.get(0)를 s1:Sparrow에 다시 넣은 것은 불가
+    //birds는 Bird타입이며 Bird타임은 Sparrow보다 큰 개념이고 더 많은 정보를 보유
+    //Sparrow는 Bird가 가져야 할 정보는 다 가지고 있지 않기 때문에 Sparrow의 다운 캐스팅이 불가
+    //부모에서 자식으로 강제로 바꾸는 것은 불가
+}
+
+open class Bird(name: String) {
+    var name: String
+
+    init {
+        this.name = name
+    }
+
+    fun fly() {
+        println("${name}이름의 조류가 날아요~")
+    }
+}
+
+class Sparrow(name: String): Bird(name) {
+    //Sparrow는 자식 클래스이므로 부모에게 가는 것은 가능
+
+}
