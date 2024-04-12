@@ -1,0 +1,27 @@
+package com.example.app
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import java.util.*
+
+class PracticeActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val tNum = findViewById<TextView>(R.id.number)
+        val btr = findViewById<Button>(R.id.button)
+
+        btr.setOnClickListener {
+            val random= Random() //랜덤 값을 호출
+            val num = random.nextInt(6)+1 //nextInt(숫자 입력), +1을넣은 이유는 시작 1부터 하기 위해, +1를 넣지 않으면 0부터 시작 됨
+            //생성되는 랜덤 값을 num에 저장
+
+            tNum.text=num.toString()//tNum이 텍스트이기때문에 num를.toString()으로 변화하여 num를 tNum에 저장
+
+        }
+
+    }
+}
