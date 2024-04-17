@@ -1,0 +1,29 @@
+package com.example.app
+
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import com.example.app.databinding.ActivityPracticeBinding
+
+class Practice : AppCompatActivity() {
+
+    private lateinit var binding: ActivityPracticeBinding
+
+    @SuppressLint("MissingInflatedId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_practice)
+
+        binding= ActivityPracticeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.myButton.setOnClickListener {
+            binding.myText.text="Hi~"
+        }
+
+
+
+    }
+}
