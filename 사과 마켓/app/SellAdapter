@@ -1,0 +1,74 @@
+package com.example.apppractice
+
+import android.annotation.SuppressLint
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.apppractice.databinding.ItemListBinding
+import java.text.DecimalFormat
+
+class SellAdapter(private val mItem: MutableList<Item>) :
+    RecyclerView.Adapter<SellAdapter.Holder>() {
+
+    interface ItemClick {
+        fun onClick(view: View, position: Int)
+    }
+
+    interface ItemLongClick {
+        fun onLongClick(view: View, position: Int)
+            }
+
+    var itemClick: ItemClick? = null
+    var itemLongClick: ItemLongClick? = null
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder.itemView.setOnClickListener {
+            itemClick?.onClick(it, position)
+        }
+
+        holder.itemView.setOnLongClickListener OnLongClickListener@ {
+            itemLongClick?.onLongClick(it, position)
+            return@OnLongClickListener true
+        }
+        holder.item.setImageResource(mItem[position].itemImage)
+        holder.itemNT.text = mItem[position].itemName
+        holder.itemAddress.text = mItem[position].sellerAddress
+
+        val price = mItem[position].itemPrice
+        holder.itemPR.text = DecimalFormat("#,###").format(price) + "원"
+
+        holder.itemChat.text = mItem[position].Chatchat.toString()
+        holder.itemLike.text = mItem[position].interestChat.toString()
+
+        if(mItem[position].like)
+            holder.heartImage.setImageResource(R.drawable.heart_two)
+        else
+            holder.heartImage.setImageResource(R.drawable.heart_one)
+
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getItemCount(): Int {
+        return mItem.size
+    }
+
+    inner class Holder(binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
+        val item = binding.iconItemImage
+        val itemNT = binding.itemTitleText
+        val itemAddress = binding.addressText
+        val itemPR = binding.priceText
+        val itemChat = binding.chatText
+        val itemLike = binding.likeChatText
+        val heartImage = binding.likeHeartImage
+    }
+}
