@@ -1,0 +1,17 @@
+package com.example.apppractice
+
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Item(
+    val itemImage: Int,//아이템 이미지
+    val itemName: String,//아이템 이름
+    val itemDetail: String,//아이템 상세 설명
+    val sellerName: String,//판매자 이름
+    val itemPrice: Int,//아이템 가격
+    val sellerAddress: String,//판매자 주소
+    var interestChat: Int,//좋아요 수
+    val Chatchat: Int,//채팅 수
+    var like: Boolean//좋아요 클릭 수
+) : Parcelable
