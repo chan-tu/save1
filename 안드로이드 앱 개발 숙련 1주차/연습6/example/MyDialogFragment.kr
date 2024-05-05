@@ -1,0 +1,20 @@
+package com.example.apppractice
+
+import android.app.Dialog
+import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+
+class MyDialogFragment : DialogFragment() {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return activity?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.setMessage("Do you like")
+                .setPositiveButton("Yes") { dialog, id ->
+                }
+                .setNegativeButton("No") { dialog, id ->
+                }
+            builder.create()
+        } ?: throw IllegalArgumentException("Activity")
+    }
+}
